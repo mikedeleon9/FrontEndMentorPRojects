@@ -3,10 +3,10 @@ import TagComponent from "./TagComponent";
 
 export default function LeftSideBar(){
     return(
-        <div className="border-r-1 h-screen px-4">
+        <div className="border-r-1 h-screen px-4 row-span-7">
             <h1 className="text-4xl">Notes</h1>
-            <div className="border">
-                <div className="px-4">
+            <div className="border-b-1 py-4">
+                <div className="px-4 flex flex-col gap-2">
                     <div className="flex items-center gap-2">
                         <IoHomeOutline />
                         <p>All Notes</p>
@@ -20,7 +20,7 @@ export default function LeftSideBar(){
                 
             </div>
 
-            <div className="px-4">
+            <div className="px-4 flex flex-col gap-2 py-2">
                 <p>Tags</p>
                <TagComponent title="Cooking" />
                <TagComponent title="Dev" />
