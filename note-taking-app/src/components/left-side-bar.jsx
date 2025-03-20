@@ -3,9 +3,9 @@ import TagComponent from "./TagComponent";
 
 export default function LeftSideBar(){
     return(
-        <div className="border-r-1 h-screen px-4 row-span-7">
-            <h1 className="text-4xl">Notes</h1>
-            <div className="border-b-1 py-4">
+        <div className="border-r-1 h-screen px-4 row-span-10">
+            <h1 className="text-2xl">Notes</h1>
+            <div className=" py-4">
                 <div className="px-4 flex flex-col gap-2">
                     <div className="flex items-center gap-2">
                         <IoHomeOutline />
