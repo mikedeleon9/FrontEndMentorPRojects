@@ -1,15 +1,15 @@
 
-import { IoHomeOutline } from "react-icons/io5";
-import './App.css'
+import LeftSideBar from "./components/left-side-bar"
+
 
 function App() {
   
 
   return (
-    <>
-   
-   <IoHomeOutline />
-    </>
+    <div className="grid grid-cols-5">
+    <LeftSideBar></LeftSideBar>
+    
+    </div>
   )
 }
 
