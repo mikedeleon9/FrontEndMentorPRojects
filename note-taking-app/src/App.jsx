@@ -1,15 +1,18 @@
 import LeftSideBar from "./components/left-side-bar"
 import TopBar from "./components/TopBar"
-import NotesComponent from "./components/NotesComponent"
+import NotesApp from "./components/NotesApp"
+import NotesControl from "./components/NotesControl"
+
 
 function App() {
   
 
   return (
-    <div className="grid grid-cols-7 grid-rows-10">
+    <div className="grid grid-cols-6 grid-rows-10 h-screen">
     <LeftSideBar></LeftSideBar>
     <TopBar></TopBar>
-    <NotesComponent />
+    <NotesApp />
+    
     </div>
   )
 }
