@@ -6,12 +6,11 @@ const Modal = ({ isOpen, onClose, selectedTags, setSelectedTags }) => {
     const availableTags = ["Cooking", "Dev", "Fitness", "Health", "Personal", "React", "Recipes", "Shopping", "Travel", "TypeScript"];
 
     const handleTagClick = (tag) => {
-        if (selectedTags.includes(tag)) {
-          setSelectedTags(selectedTags.filter((t) => t !== tag)); // Remove tag
-        } else {
-          setSelectedTags([...selectedTags, tag]); // Add tag
-        }
-      };
+      setSelectedTags(selectedTags.includes(tag) 
+          ? selectedTags.filter(t => t !== tag) 
+          : [...selectedTags, tag]
+      );
+  };
   
     return (
       <div className="modal-overlay border-2 fixed top-0 left-0 w-screen h-screen bg-[#00000080] flex items-center justify-center" onClick={onClose}>
@@ -22,7 +21,11 @@ const Modal = ({ isOpen, onClose, selectedTags, setSelectedTags }) => {
           {availableTags.map((tag) => {return (
            
                 <div 
-                key={tag} onClick={() => handleTagClick(tag)} className="p-4 cursor-pointer flex items-center gap-2">
+                key={tag} 
+                onClick={() => handleTagClick(tag)} 
+                className={`p-3 cursor-pointer flex items-center gap-2 rounded-md border transition duration-200 
+                  ${selectedTags.includes(tag) ? "bg-blue-500 text-white border-blue-700" : "bg-gray-200 border-gray-400"}`}
+          >
                 <TiTag></TiTag>
                 <p>{tag}</p>
                 </div>
@@ -30,7 +33,7 @@ const Modal = ({ isOpen, onClose, selectedTags, setSelectedTags }) => {
             
          ) }) }
           </div>
-          <button onClick={onClose}>Save</button>
+          <button className="bg-blue-500 text-white hover:bg-blue-700 px-3 py-1 rounded-md" onClick={onClose}>Save</button>
         </div>
       </div>
     );

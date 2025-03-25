@@ -3,7 +3,7 @@ import TagComponent from "./TagComponent";
 
 export default function LeftSideBar(){
     return(
-        <div className="shadow-xs shadow-[#0B1215]  row-span-10 py-4">
+        <div className=" row-span-10 py-4">
             <h1 className="text-2xl px-4 cursor-pointer" style={{fontFamily:"Lily Script One, system-ui" }}>Notes</h1>
             <div className=" py-4 shadow-sm">
                 <div className="px-4 flex flex-col gap-2">
@@ -20,7 +20,7 @@ export default function LeftSideBar(){
                 
             </div>
 
-            <div className="px-4 flex flex-col gap-4 py-2 ">
+            <div className="px-4 flex flex-col gap-4 py-2">
                 <p className="text-sm text-gray-600">Tags</p>
                <TagComponent title="Cooking" />
                <TagComponent title="Dev" />

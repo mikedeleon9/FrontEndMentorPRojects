@@ -3,7 +3,7 @@ import Note from "./Note";
 import NotesControl from "./NotesControl";
 
 
-export default function NotesComponent({notes, addNote, selectNote, deleteNote}){
+export default function NotesComponent({notes, addNote, selectNote, selectedNote}){
 
     return (
         <div className="shadow-sm row-span-10  gap-4 w-1/2 flex flex-col px-4 py-6 ">
@@ -11,7 +11,7 @@ export default function NotesComponent({notes, addNote, selectNote, deleteNote})
             <div className="space-y-4">
             {notes.map((note) => (
         <div key={note.id} className="flex justify-between items-center gap-4">
-        <Note  id={note.id} onSelect={selectNote} />
+        <Note  id={note.id} onSelect={selectNote} selectedNote={selectedNote} />
         
       </div>
           
