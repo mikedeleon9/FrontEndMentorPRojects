@@ -34,10 +34,10 @@ function App() {
   }
 
   return (
-    <div className={`${isDarkMode ? 'bg-none' : 'bg-Neutral-200'} px-8 md:px-22 xl:px-48 py-8  flex flex-col gap-8`}>
+    <div className={`${isDarkMode ? 'bg-linear-LinearBlue' : 'bg-Neutral-200'} px-8 md:px-22 xl:px-48 py-8  flex flex-col gap-8`}>
       <TopBar isDarkMode={isDarkMode} handleDarkMode={handleDarkMode}></TopBar>
       <ExtensionList isDarkMode={isDarkMode} showOnlyActive={showOnlyActive} showOnlyInactive={showOnlyInactive} handleInactive={handleInactive} handleAllClick={handleAllClick} handleFilterClick={handleFilterClick} />
-      <MainGrid showOnlyInactive={showOnlyInactive} showOnlyActive={showOnlyActive}/>
+      <MainGrid isDarkMode={isDarkMode} showOnlyInactive={showOnlyInactive} showOnlyActive={showOnlyActive}/>
     </div>
   )
 }

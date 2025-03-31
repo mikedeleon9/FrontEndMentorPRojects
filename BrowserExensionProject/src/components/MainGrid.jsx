@@ -17,7 +17,7 @@ import Extension from "./Extension"
 
 
 
-export default function MainGrid({showOnlyActive, showOnlyInactive}){
+export default function MainGrid({isDarkMode, showOnlyActive, showOnlyInactive}){
 
 const [extensions, setExtensions]  = useState([
     {
@@ -123,7 +123,7 @@ const handleRemove = (name) => {
 
                 return(
                     
-                    <div key={index} className="bg-Neutral-800 rounded-2xl p-2  gap-2 border-1 border-slate-500">
+                    <div key={index} className={`${isDarkMode ? "bg-Neutral-800" : "bg-Neutral-0" } rounded-2xl p-2  gap-2 border-1 border-slate-500`}>
                 <Extension  
                 onToggle={handleToggle} 
                 onRemove={handleRemove} 
@@ -131,6 +131,7 @@ const handleRemove = (name) => {
                 title={extension.name} 
                 summary={extension.description} 
                 isActive={extension.isActive} 
+                isDarkMode = {isDarkMode}
                 />
                     </div>
                     
