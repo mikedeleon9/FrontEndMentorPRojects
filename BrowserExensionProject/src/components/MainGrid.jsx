@@ -17,80 +17,80 @@ import Extension from "./Extension"
 
 
 
-export default function MainGrid({showOnlyActive}){
+export default function MainGrid({showOnlyActive, showOnlyInactive}){
 
 const [extensions, setExtensions]  = useState([
     {
     "logo" : devlensLogo,
     "name": "DevLens",
     "description": "Quickly inspect page layouts and visualize element boundaries.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": snapshotLogo,
     "name": "StyleSpy",
     "description": "Instantly analyze and copy CSS from any webpage element.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": speedLogo,
     "name": "SpeedBoost",
     "description": "Optimizes browser resource usage to accelerate page loading.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": wizardLogo,
     "name": "JSONWizard",
     "description": "Formats, validates, and prettifies JSON responses in-browser.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": masterLogo,
     "name": "TabMaster Pro",
     "description": "Organizes browser tabs into groups and sessions.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": viewportLogo,
     "name": "ViewportBuddy",
     "description": "Simulates various screen resolutions directly within the browser.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": markUpLogo,
     "name": "Markup Notes",
     "description": "Enables annotation and notes directly onto webpages for collaborative debugging.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": guideLogo,
     "name": "GridGuides",
     "description": "Overlay customizable grids and alignment guides on any webpage.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": paletteLogo,
     "name": "Palette Picker",
     "description": "Instantly extracts color palettes from any webpage.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": linkLogo,
     "name": "LinkChecker",
     "description": "Scans and highlights broken links on any page.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": snapshotLogo,
     "name": "DOM Snapshot",
     "description": "Capture and export DOM structures quickly.",
-    "isActive": true
+    "isActive": false
 },
 {
     "logo": consoleLogo,
     "name": "ConsolePlus",
     "description": "Enhanced developer console with advanced filtering and logging.",
-    "isActive": true
+    "isActive": false
 }
 ])
 
@@ -98,29 +98,40 @@ const [toggledButtons, setToggledButtons] = useState([])
 
 
 
-const filteredExtensions = showOnlyActive
- ? extensions.filter(ext => toggledButtons.includes(ext.name) && ext.isActive) : extensions;
+const filteredExtensions = 
+   showOnlyActive ? extensions.filter(ext => ext.isActive) 
+ : showOnlyInactive ? extensions.filter(ext => !ext.isActive)
+ : extensions;
 
-  const handleToggle = (event) => {
-    const {checked, name} = event.target;
+ const handleToggle = (event) => {
+    const { checked, name } = event.target;
+  
+    setExtensions((prevExtensions) =>
+      prevExtensions.map((ext) =>
+        ext.name === name ? { ...ext, isActive: checked } : ext
+      )
+    );
+  };
 
-    setToggledButtons((prev) =>
-        checked ? [...prev, name] : prev.filter((item) => item !== name)
-      );
-    
-  }
 
 const handleRemove = (name) => {
     setExtensions((prevExtension) => prevExtension.filter(ext => ext.name != name))
 }
     return(
-        <div className="grid grid-cols-3 grid-rows-4 gap-3 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-4 gap-3 ">
             {filteredExtensions.map((extension,index) => {
 
                 return(
                     
-                    <div key={index} className="bg-Neutral-800 rounded-2xl p-2 gap-2 border-1 border-slate-500">
-                <Extension  onToggle={handleToggle} onRemove={handleRemove} logo={extension.logo} title={extension.name} summary={extension.description} isChecked={toggledButtons.includes(extension.name)} />
+                    <div key={index} className="bg-Neutral-800 rounded-2xl p-2  gap-2 border-1 border-slate-500">
+                <Extension  
+                onToggle={handleToggle} 
+                onRemove={handleRemove} 
+                logo={extension.logo} 
+                title={extension.name} 
+                summary={extension.description} 
+                isActive={extension.isActive} 
+                />
                     </div>
                     
                 )
@@ -129,3 +140,6 @@ const handleRemove = (name) => {
         </div>
     )
 }
+
+
+
