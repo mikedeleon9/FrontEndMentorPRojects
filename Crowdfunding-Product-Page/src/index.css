@@ -7,10 +7,12 @@
 
 *{
     font-family: "Commissioner", sans-serif;
+    box-sizing: border-box;
 }
 
 html, body, #root {
     height: 100%; /* Ensure parent elements take full screen height */
+    width: 100%;
     background: oklch(0.967 0.003 264.542);
 }
 
@@ -22,9 +24,7 @@ body{
     filter:brightness(75%)
 }
 
-span{
-    border: 0.5px solid lightgray;
-}
+
 
 progress {
     width: 100%;

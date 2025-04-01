@@ -12,8 +12,8 @@ export default function BambooComponent(){
             <div className="flex justify-between">
                 <Button content={"Back this project"}/>
                     
-                        <button className="relative bg-gray-100 ml-auto rounded-full text-right px-14 py-4 text-DarkGray font-medium"><span>Bookmark</span>
-                            <img className="absolute left-0 top-0 mr-6" src={BookmarkIcon} alt="bookmark-icon " />
+                        <button className="relative bg-gray-100  rounded-full  pl-20 pr-5 py-4 text-DarkGray font-medium "><span className="">Bookmark</span>
+                            <img className="absolute left-0 top-0 " src={BookmarkIcon} alt="bookmark-icon " />
                         </button>
                         
                    
