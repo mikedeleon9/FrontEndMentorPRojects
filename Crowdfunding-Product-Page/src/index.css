@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme{
+    --color-DarkGray: hsl(0, 0%, 48%);
+    --color-ModerateCyan: hsl(176, 50%, 47%)
+}
+
+*{
+    font-family: "Commissioner", sans-serif;
+}
+
+html, body, #root {
+    height: 100%; /* Ensure parent elements take full screen height */
+}
+
+body{
+    height: 100%;
+}
+
+.backgroundMain{
+    filter:brightness(75%)
+}
+
