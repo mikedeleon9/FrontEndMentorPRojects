@@ -45,4 +45,11 @@ progress {
     border-radius: 25px;
     transition: width 0.3s ease; /* Smooth transition */
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome, Safari */
+  }
+  .no-scrollbar {
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+  }
   

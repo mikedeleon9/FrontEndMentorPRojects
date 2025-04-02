@@ -3,7 +3,7 @@ import BookmarkIcon from "../images/icon-bookmark.svg";
 import masterLogo from "../images/logo-mastercraft.svg"
 import { useState } from "react";
 
-export default function BambooComponent(){
+export default function BambooComponent({showModal, openModal}){
     const [bookmarked, setBookmarked] = useState(false);
 
     function handleBookmark(){
@@ -16,7 +16,7 @@ export default function BambooComponent(){
                 <p className="text-DarkGray">A beautiful & handcrafted monitor stand to reduce neck & eye strain.</p>
             </div>
             <div className="flex justify-between">
-                <Button content={"Back this project"}/>
+                <Button onClick={openModal} content={"Back this project"}/>
                     
                         <button onClick={handleBookmark} className={`relative bg-gray-100 cursor-pointer hover:opacity-85 rounded-full  pl-20 pr-5 py-4 ${bookmarked ? "text-ModerateCyan" : "text-DarkGray" } font-medium `}><span className="">{bookmarked ? "Bookmarked" : "Bookmark"}</span>
                            

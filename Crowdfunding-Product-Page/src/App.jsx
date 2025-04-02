@@ -4,9 +4,14 @@ import backgroundImage from "./images/image-hero-desktop.jpg"
 import MiddleContainer from "./components/MiddleContainer"
 import MainComponent from "./components/MainComponent"
 import Modal from "./components/Modal"
+import { useState } from "react"
 
 function App() {
- 
+ const [showModal, setShowModal] = useState(false);
+
+ function openModal(){
+  showModal ? setShowModal(true) : setShowModal(false);
+ }
 
   return (
     <div className="min-h-screen relative flex flex-col items-center">
@@ -18,11 +23,11 @@ function App() {
         />
       </div>
       <Navbar className="absolute top-0 w-full" />
-      <div className="Layout max-w-[800px]  -mt-20  flex flex-col gap-6 ">
-          <BambooComponent></BambooComponent>
+      <div className="Layout max-w-[700px]  -mt-20  flex flex-col gap-6 ">
+          <BambooComponent openModal={openModal} showModal={showModal}></BambooComponent>
           <MiddleContainer></MiddleContainer>
           <MainComponent></MainComponent>
-          <Modal></Modal>
+          <Modal showModal={showModal} ></Modal>
       </div>
     </div>
   )
