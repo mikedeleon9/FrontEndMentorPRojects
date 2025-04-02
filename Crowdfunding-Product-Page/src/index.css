@@ -2,8 +2,10 @@
 
 @theme{
     --color-DarkGray: hsl(0, 0%, 48%);
-    --color-ModerateCyan: hsl(176, 50%, 47%)
+    --color-ModerateCyan: hsl(176, 50%, 47%);
+    --color-DarkCyan: hsl(176, 72%, 28%);
 }
+
 
 *{
     font-family: "Commissioner", sans-serif;
@@ -11,7 +13,7 @@
 }
 
 html, body, #root {
-    height: 100%; /* Ensure parent elements take full screen height */
+    height: 100%; 
     width: 100%;
     background: oklch(0.967 0.003 264.542);
 }
