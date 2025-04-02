@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 import backgroundImage from "./images/image-hero-desktop.jpg"
 import MiddleContainer from "./components/MiddleContainer"
 import MainComponent from "./components/MainComponent"
+import Modal from "./components/Modal"
 
 function App() {
  
@@ -21,6 +22,7 @@ function App() {
           <BambooComponent></BambooComponent>
           <MiddleContainer></MiddleContainer>
           <MainComponent></MainComponent>
+          <Modal></Modal>
       </div>
     </div>
   )

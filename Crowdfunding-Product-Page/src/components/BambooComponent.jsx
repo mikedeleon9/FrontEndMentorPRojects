@@ -18,14 +18,14 @@ export default function BambooComponent(){
             <div className="flex justify-between">
                 <Button content={"Back this project"}/>
                     
-                        <button onClick={handleBookmark} className={`relative bg-gray-100 cursor-pointer  rounded-full  pl-20 pr-5 py-4 ${bookmarked ? "text-ModerateCyan" : "text-DarkGray" } font-medium `}><span className="">{bookmarked ? "Bookmarked" : "Bookmark"}</span>
+                        <button onClick={handleBookmark} className={`relative bg-gray-100 cursor-pointer hover:opacity-85 rounded-full  pl-20 pr-5 py-4 ${bookmarked ? "text-ModerateCyan" : "text-DarkGray" } font-medium `}><span className="">{bookmarked ? "Bookmarked" : "Bookmark"}</span>
                            
-                            <svg className="absolute left-0 top-0" width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill={bookmarked ? "#3cb4ac" : "#2F2F2F"} cx="28" cy="28" r="28"/><path fill="#eee" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
+                            <svg className="absolute left-0 top-0 " width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill={bookmarked ? "#3cb4ac" : "#2F2F2F"} cx="28" cy="28" r="28"/><path fill="#eee" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
                         </button>
                         
                    
             </div>
-            <img className="mainLogo absolute top-[-10%] inset-x-0 mx-auto" src={masterLogo} alt="master-logo" />
+            <img className="mainLogo absolute top-[-10%] inset-x-0 mx-auto " src={masterLogo} alt="master-logo" />
         </div>
     )
 }
