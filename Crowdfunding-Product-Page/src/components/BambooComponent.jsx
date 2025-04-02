@@ -3,7 +3,7 @@ import BookmarkIcon from "../images/icon-bookmark.svg";
 import masterLogo from "../images/logo-mastercraft.svg"
 import { useState } from "react";
 
-export default function BambooComponent({showModal, openModal}){
+export default function BambooComponent({openModal}){
     const [bookmarked, setBookmarked] = useState(false);
 
     function handleBookmark(){

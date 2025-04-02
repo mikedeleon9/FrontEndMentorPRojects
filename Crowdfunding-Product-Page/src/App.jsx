@@ -10,11 +10,12 @@ function App() {
  const [showModal, setShowModal] = useState(false);
 
  function openModal(){
-  showModal ? setShowModal(true) : setShowModal(false);
+  setShowModal(prev => !prev);
+  
  }
 
   return (
-    <div className="min-h-screen relative flex flex-col items-center">
+    <div className={`${showModal ? "brightness-70" : "brightness-40"}min-h-screen relative flex flex-col items-center`}>
       <div className="w-full h-[400px] overflow-hidden">
         <img 
           src={backgroundImage} 
