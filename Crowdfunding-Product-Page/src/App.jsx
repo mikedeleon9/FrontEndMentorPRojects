@@ -8,11 +8,12 @@ import { useState } from "react"
 
 function App() {
  const [showModal, setShowModal] = useState(false);
+ const [selectedOption, setSelectedOption] = useState('');
 
- function openModal(){
-  setShowModal(prev => !prev);
-  
- }
+ function openModal(option = "") {
+  setSelectedOption(option); // 👈 set selected option when opening
+  setShowModal(true);
+}
 
   return (
     <div className={`${showModal ? "brightness-70" : "brightness-40"}min-h-screen relative flex flex-col items-center`}>
@@ -27,8 +28,8 @@ function App() {
       <div className="Layout max-w-[700px]  -mt-20  flex flex-col gap-6 ">
           <BambooComponent openModal={openModal} showModal={showModal}></BambooComponent>
           <MiddleContainer></MiddleContainer>
-          <MainComponent></MainComponent>
-          <Modal showModal={showModal} ></Modal>
+          <MainComponent openModal={openModal}></MainComponent>
+          <Modal setSelectedOption={setSelectedOption} selectedOption={selectedOption} showModal={showModal} setShowModal={setShowModal} ></Modal>
       </div>
     </div>
   )

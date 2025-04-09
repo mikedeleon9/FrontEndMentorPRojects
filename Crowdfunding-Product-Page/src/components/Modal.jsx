@@ -1,15 +1,23 @@
 import React from 'react'
 import ModalPledgeComponent from './ModalPledgeComponent'
-import { useState } from 'react';
 
-const Modal = ({showModal}) => {
 
-  const [selectedOption, setSelectedOption] = useState('');
+const Modal = ({showModal, setShowModal, selectedOption, setSelectedOption}) => {
+
+  
 
     if (!showModal) return null;
+
+    const handleOverlayClick = (e) => {
+      // Close modal if the background is clicked
+      if (e.target === e.currentTarget) {
+        setShowModal(false);
+      }
+    };
+    
   return (
     <>
-    <div className='fixed inset-0 bg-black opacity-40 z-10'></div>
+    <div  onClick={handleOverlayClick} className='fixed inset-0 bg-black opacity-40 z-10'></div>
     
     <div className={` bg-white rounded-lg absolute max-w-[700px] h-[500px] inset-x-0 mx-auto h-96 fixed top-20 z-10 p-8 overflow-auto no-scrollbar`}>
         

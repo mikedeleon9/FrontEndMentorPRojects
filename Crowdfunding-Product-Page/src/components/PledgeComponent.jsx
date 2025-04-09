@@ -1,6 +1,6 @@
 import Button from "./Button"
 
-export default function PledgeComponent({edition, money, amount, description}){
+export default function PledgeComponent({edition, money, amount, description, openModal}){
     return (
         <div className="border-1 p-6 border-gray-200 rounded-lg flex flex-col gap-4">
             <div className="flex items-center justify-between">
@@ -14,8 +14,8 @@ export default function PledgeComponent({edition, money, amount, description}){
                     <span className="text-4xl font-bold ">{amount}</span>
                     <p className="text-DarkGray"> left</p>
                 </div>
-                <Button content={"Select Reward"}/>
+                <Button onClick={() => openModal(edition)} content={"Select Reward"} />
             </div>
-        </div>
+        </div> 
     )
-}
+} 
