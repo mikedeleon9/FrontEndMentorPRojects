@@ -1,7 +1,10 @@
 import React from 'react'
 import ModalPledgeComponent from './ModalPledgeComponent'
+import { useState } from 'react';
 
 const Modal = ({showModal}) => {
+
+  const [selectedOption, setSelectedOption] = useState('');
 
     if (!showModal) return null;
   return (
@@ -13,10 +16,10 @@ const Modal = ({showModal}) => {
       <h2 className='font-bold text-xl mb-6'>Back this project</h2>
       <p className='mb-8 text-DarkGray'>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
       <div className='flex flex-col gap-6'>
-        <ModalPledgeComponent labelTitle={"Pledge with no reward"} description={"Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email."} />
-        <ModalPledgeComponent labelTitle={"Bamboo Stand"} description={"You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."} />
-        <ModalPledgeComponent labelTitle={"Black Edition Stand"} description={"You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included."} />
-        <ModalPledgeComponent labelTitle={"Mahogany Special Edition"} description={"You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included."} />
+        <ModalPledgeComponent setSelectedOption={setSelectedOption} selectedOption={selectedOption} labelTitle={"Pledge with no reward"} description={"Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email."} />
+        <ModalPledgeComponent setSelectedOption={setSelectedOption} selectedOption={selectedOption} labelTitle={"Bamboo Stand"} description={"You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."} />
+        <ModalPledgeComponent setSelectedOption={setSelectedOption} selectedOption={selectedOption} labelTitle={"Black Edition Stand"} description={"You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included."} />
+        <ModalPledgeComponent setSelectedOption={setSelectedOption} selectedOption={selectedOption} labelTitle={"Mahogany Special Edition"} description={"You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included."} />
       </div>
     </div>
     </>
