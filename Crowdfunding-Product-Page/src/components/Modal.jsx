@@ -17,9 +17,9 @@ const Modal = ({showModal, setShowModal, selectedOption, setSelectedOption}) => 
     
   return (
     <>
-    <div  onClick={handleOverlayClick} className='fixed inset-0 bg-black opacity-40 z-10'></div>
+    <div  onClick={handleOverlayClick} className='fixed inset-0 bg-black opacity-40 z-10 shadow-xl'></div>
     
-    <div className={` bg-white rounded-lg absolute max-w-[700px] h-[500px] inset-x-0 mx-auto h-96 fixed top-20 z-10 p-8 overflow-auto no-scrollbar`}>
+    <div className={` bg-white rounded-lg absolute max-w-[700px] h-[500px] inset-x-0 mx-auto h-96 fixed top-20 z-10 p-8 overflow-auto no-scrollbar `}>
         
       <h2 className='font-bold text-xl mb-6'>Back this project</h2>
       <p className='mb-8 text-DarkGray'>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
