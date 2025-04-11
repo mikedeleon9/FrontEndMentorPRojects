@@ -4,7 +4,7 @@ import data from "./data"
 export default function Grid(){
 
     const [shuffleData, setShuffleData] = useState(data);
-    const [isClicked, setisClicked] = useState(false);
+    const [isClicked, setisClicked] = useState("");
 
 
     function shuffleCards(){
@@ -16,6 +16,8 @@ export default function Grid(){
 
     function clickedCard(){
         setisClicked(prev => !prev);
+      
+    
     }
 
     return (
