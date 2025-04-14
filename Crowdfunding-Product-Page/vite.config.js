@@ -5,6 +5,5 @@ import tailwindcss from "@tailwindcss/vite"
 // https://vite.dev/config/
 export default defineConfig({
   base: '/FrontEndMentorPRojects/Crowdfunding-Product-Page/',
-
   plugins: [react(), tailwindcss()],
 })
